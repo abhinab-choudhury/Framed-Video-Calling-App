@@ -3,7 +3,7 @@ import About from "./about"
 const home = () => {
   return (
     <>
-      <div className="mt-24 items-center grid gap-8 grid-cols-2 grid-rows-1">
+      <div className="mt-40 items-center grid gap-8 grid-cols-2 grid-rows-1">
         <h1 className="flex flex-col">
           <span className="mt-5 roboto-bold align-middle text-5xl ml-auto mr-auto">
             Welcome to Framed
