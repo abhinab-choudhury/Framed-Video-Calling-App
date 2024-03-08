@@ -1,7 +1,7 @@
 const home = () => {
   return (
     <>
-      <div className="w-screen mt-24 items-center grid gap-8 grid-cols-2 grid-rows-1">
+      <div className="mt-24 items-center grid gap-8 grid-cols-2 grid-rows-1">
         <h1 className="flex flex-col">
           <span className="mt-5 roboto-bold align-middle text-5xl ml-auto mr-auto">
             Welcome to Framed
@@ -25,9 +25,9 @@ const home = () => {
             </form>
           </div>
         </div>
-        <div className="relative left-64 mb-20">
-          <div className="w-full m-2 border rounded-md border-gray-600 justify-center align-middle p-5">
-            <form className="block">
+        <div className="w-screen flex justify-center align-middle">
+          <div className="w-fit m-2 border rounded-md border-gray-600 justify-center align-middle p-5">
+            <form>
               <div className="flex">
                 <div>
                   <h1 className="text-3xl poppins-bold ">Join a Video Call</h1>
@@ -35,7 +35,7 @@ const home = () => {
                   <input className="block border rounded border-gray-300 h-11 p-3 m-2" id="code" type="text" placeholder="Code" />
                   <button className="hover:bg-blue-400 hover:text-white mx-2 font-bold roboto-bold border p-3 rounded" type="submit">Join Now</button>
                 </div>
-                <img className="ml-28 object-fill" src="join-meeting.jpg" />
+                <img width="480px" className="object-cover" src="join-meeting.jpg" />
               </div>
             </form>
           </div>
