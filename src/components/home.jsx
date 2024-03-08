@@ -1,4 +1,5 @@
 import Form from "./form"
+import About from "./about"
 const home = () => {
   return (
     <>
@@ -14,12 +15,13 @@ const home = () => {
             <Form formHeading="Start a Video Call" labelText="Meeting Title" labelFor="Title" imgSize="280px" img="start-meeting.jpg" btnText="Start Meeting" />
           </div>
         </div>
-        <div className="w-screen flex justify-center align-middle">
-          <div className="w-fit m-2 border rounded-md border-gray-600 justify-center align-middle p-5">
-            <Form formHeading="Join a Video Call" labelText="Meeting Code" labelFor="Code" imgSize="480px" img="join-meeting.jpg" btnText="Join Now" />
-          </div>
+      </div>
+      <div className="flex justify-center align-middle">
+        <div className="w-fit m-2 border rounded-md border-gray-600 justify-center align-middle p-5">
+          <Form formHeading="Join a Video Call" labelText="Meeting Code" labelFor="Code" imgSize="480px" img="join-meeting.jpg" btnText="Join Now" />
         </div>
       </div>
+      <About />
     </>
   )
 }
