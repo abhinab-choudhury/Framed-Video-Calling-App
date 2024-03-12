@@ -20,9 +20,16 @@ export default function about() {
           </a>
         </li>
       </ul>
-      <div className="font-bold flex justify-center">
-        <span className="mt-auto mb-auto mx-3 font-extrabold">Framed</span>
-        <img width="40" height="40" src="https://img.icons8.com/avantgarde/100/video-message.png" alt="video-message" />
+      <div className="font-bold flex flex-col justify-center">
+        <div className='flex justify-end'>
+          <span className="mt-auto mb-auto mx-3 font-extrabold">Framed</span>
+          <img width="40" height="40" src="https://img.icons8.com/avantgarde/100/video-message.png" alt="video-message" />
+        </div>
+        <div className='mx-3 text-sm font-extralight'>
+        <div className="copyright">
+          <p>&copy; {new Date().getFullYear()} My Website. All rights reserved.</p>
+        </div>
+        </div>
       </div>
     </div>
   )

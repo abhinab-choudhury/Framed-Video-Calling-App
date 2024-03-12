@@ -1,5 +1,6 @@
 import Form from "./Form"
 import About from "./About"
+
 const home = () => {
   return (
     <>
@@ -12,7 +13,7 @@ const home = () => {
         </h1>
         <div className="flex flex-col">
           <div className="m-2 block border rounded-md border-gray-600 justify-center align-middle p-5 w-4/5">
-            <Form formHeading="Start a Video Call" labelText="Meeting Title" labelFor="Title" imgSize="280px" img="start-meeting.jpg" btnText="Start Meeting" />
+            <Form formHeading="Start a Video Call" labelText="Meeting Title" labelFor="Title" imgSize="280px" img="start-meeting.jpg" btnText="Start Meeting" linkTo="/framed/meet/temperory" />
           </div>
         </div>
       </div>

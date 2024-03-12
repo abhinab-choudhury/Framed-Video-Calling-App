@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function form({ formHeading, labelText, labelFor, imgSize, img, btnText }) {
+export default function form({ formHeading, labelText, labelFor, imgSize, img, btnText, linkTo }) {
   return (
     <div>
       <form className="block">
@@ -9,7 +10,9 @@ export default function form({ formHeading, labelText, labelFor, imgSize, img, b
             <h1 className="text-3xl poppins-bold ">{formHeading}</h1>
             <label className="mx-2 font-bold text-md" htmlFor={labelFor}>{labelText}</label>
             <input className="cursor-pointer block border rounded border-gray-29 h-11 w-4/5 p-3 m-2" id={labelFor} type="text" placeholder={labelFor} />
-            <button className="cursor-pointer hover:bg-blue-400 hover:text-white mx-2 font-bold roboto-bold border p-3 rounded" type="submit">{btnText}</button>
+            <button className="cursor-pointer hover:bg-blue-400 hover:text-white mx-2 font-bold roboto-bold border p-3 rounded" type="submit">
+              <Link to={linkTo}> {btnText} </Link>
+            </button>
           </div>
           <img width={imgSize} className="object-fill" src={img} />
         </div>
