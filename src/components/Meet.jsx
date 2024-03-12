@@ -1,12 +1,13 @@
-import React from 'react'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom';
 
 function Meet() {
-  let { id } = useParams()
+  let { roomId } = useParams()
   return (
-    <div className='w-100 h-100 flex justify-center items-center'>
-      <h1> Meet Page </h1>
-    </div>
+    <>
+      <div className='w-100 h-screen bg-blue-500 flex justify-center items-center'>
+        <h1 className='text-4xl'> Meet ID : {roomId} </h1>
+      </div>
+    </>
   )
 }
 

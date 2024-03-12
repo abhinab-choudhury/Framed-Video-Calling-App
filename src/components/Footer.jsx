@@ -1,8 +1,7 @@
-import React from 'react'
 
-export default function about() {
+export default function Footer() {
   return (
-    <div className='flex justify-between w-fill bg-blue-50 mt-12 p-5 roboto-bold'>
+    <div className='flex justify-between w-fill bg-blue-50 p-5 roboto-bold'>
       <ul className='flex'>
         <li className='px-3'>
           <a href="https://www.instagram.com/_abhinab_choudhury_/">
@@ -26,9 +25,9 @@ export default function about() {
           <img width="40" height="40" src="https://img.icons8.com/avantgarde/100/video-message.png" alt="video-message" />
         </div>
         <div className='mx-3 text-sm font-extralight'>
-        <div className="copyright">
-          <p>&copy; {new Date().getFullYear()} My Website. All rights reserved.</p>
-        </div>
+          <div className="copyright">
+            <p>&copy; {new Date().getFullYear()} My Website. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </div>

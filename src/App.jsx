@@ -1,24 +1,24 @@
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Home from './components/Home'
+import Home from "./components/Home"
 import Navbar from "./components/Navbar"
-import Sigin from "./components/Signin"
+import Signin from './components/Signin'
+import Footer from './components/Footer'
+import ErrorPage from './components/ErrorPage'
 import Signup from './components/Signup'
-import Meet from "./components/Meet"
-import { BrowserRouter, Routes, Route} from 'react-router-dom'; 
-
-import { v4 as uuidv4 } from 'uuid';
+import Meet from './components/Meet'
 
 function App() {
-  
+
   return (
     <>
       <BrowserRouter>
-        <Navbar />
         <Routes>
-          <Route exact path="/framed" element={<Home />} /> 
-          <Route exact path="/framed/signin" element={<Sigin />} /> 
-          <Route exact path="/framed/signup" element={<Signup />} />
-          <Route exact path={`/framed/meet/:id`} element ={ <Meet /> } />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/signin" element={<Signin />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/meet/:roomId" element={<Meet />} />
+          <Route exact path='*' element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </>
