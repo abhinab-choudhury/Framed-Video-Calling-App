@@ -1,16 +1,19 @@
 {
-  "name": "video-calling-app-webrtc-",
+  "name": "video-calling-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "yarn@4.6.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "format": "prettier . --write",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "localforage": "^1.10.0",
+    "lucide-react": "^0.503.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,6 +33,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
+    "prettier-plugin-react": "^0.0.1-alpha.1",
     "tailwindcss": "^3.4.1",
     "vite": "^5.1.4"
   }
