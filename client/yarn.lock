@@ -911,6 +911,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"appwrite@npm:^17.0.2":
+  version: 17.0.2
+  resolution: "appwrite@npm:17.0.2"
+  checksum: 10c0/ba109c9158e82d5c467811ac10d8959cc1132e6032dcda95432836d4b2dc9f756f02e5061e53c62a67e0066f260ddf16c28deff7c25e433e7c6dea4bd8600c42
+  languageName: node
+  linkType: hard
+
 "arg@npm:^5.0.2":
   version: 5.0.2
   resolution: "arg@npm:5.0.2"
@@ -4369,6 +4376,7 @@ __metadata:
     "@types/react": "npm:^18.2.56"
     "@types/react-dom": "npm:^18.2.19"
     "@vitejs/plugin-react": "npm:^4.2.1"
+    appwrite: "npm:^17.0.2"
     autoprefixer: "npm:^10.4.18"
     eslint: "npm:^8.56.0"
     eslint-plugin-react: "npm:^7.33.2"
@@ -4380,6 +4388,7 @@ __metadata:
     postcss: "npm:^8.4.35"
     prettier: "npm:^3.2.5"
     prettier-plugin-react: "npm:^0.0.1-alpha.1"
+    prop-types: "npm:^15.8.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-router: "npm:^6.22.3"

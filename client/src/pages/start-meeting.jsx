@@ -1,5 +1,5 @@
 import JoinMeetingImg from "./../assets/join-meeting.jpg";
-import Form from "../components/Form";
+import Form from "../components/form";
 
 function JoinMeeting() {
   return (

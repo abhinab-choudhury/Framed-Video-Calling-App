@@ -1,31 +1,28 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Meet from "./pages/Meet";
-import JoinMeeting from "./pages/JoinMeeting";
-import ErrorPage from "./pages/ErrorPage";
-import Signin from "./pages/Signin";
-import Signup from "./pages/Signup";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ResetPassword from "./pages/ResetPassword";
+import BaseLayout from "./components/layout/base-layout";
+import HomePage from "./pages/index";
+import Meet from "./pages/meeting";
+import JoinMeeting from "./pages/start-meeting";
+import PageNotFound from "./pages/page-not-found";
+import Signin from "./pages/signin";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/signin" element={<Signin />} />
-          <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/reset-password" element={<ResetPassword />} />
-          <Route exact path="/join" element={<JoinMeeting />} />
-          <Route exact path="/meet/:roomId" element={<Meet />} />
-          <Route exact path="*" element={<ErrorPage />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<BaseLayout />}>
+          <Route index path={"/"} element={<HomePage />} />
+          <Route>
+            <Route path={"/join"} element={<JoinMeeting />} />
+            <Route path={"/meet/:roomId"} element={<Meet />} />
+            <Route path={"/settings"} element={<Meet />} />
+          </Route>
+          <Route path={"/signin"} element={<Signin />} />
+        </Route>
+
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

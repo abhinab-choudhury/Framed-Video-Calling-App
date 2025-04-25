@@ -7,14 +7,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "format": "prettier . --write",
+    "format": "prettier --write \"**/*.{md,js,jsx,css}\" --ignore-path .gitignore",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "appwrite": "^17.0.2",
     "localforage": "^1.10.0",
     "lucide-react": "^0.503.0",
     "match-sorter": "^6.3.4",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.22.3",
