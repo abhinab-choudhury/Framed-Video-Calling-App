@@ -1,7 +1,10 @@
 const Loader = () => {
   return (
     <div className="w-12 animate-spin-slow">
-      <svg viewBox="25 25 50 50" className="w-full h-full transform origin-center">
+      <svg
+        viewBox="25 25 50 50"
+        className="w-full h-full transform origin-center"
+      >
         <circle
           cx="50"
           cy="50"

@@ -13,7 +13,7 @@ function Form({ formHeading, labelText, labelFor, imgSize, img, btnText }) {
 
   return (
     <div>
-      <form className="block">
+      <form>
         <div className="flex flex-row">
           <div>
             <h1 className="text-3xl poppins-bold ">{formHeading}</h1>
@@ -23,7 +23,7 @@ function Form({ formHeading, labelText, labelFor, imgSize, img, btnText }) {
             <input
               className="cursor-pointer block border rounded border-gray-29 h-11 w-4/5 p-3 m-2"
               value={inputFiled}
-              onChange={e => setInputFiled(e.target.value)}
+              onChange={(e) => setInputFiled(e.target.value)}
               id={labelFor}
               type="text"
               placeholder={labelFor}
@@ -35,7 +35,11 @@ function Form({ formHeading, labelText, labelFor, imgSize, img, btnText }) {
               <Link to={linkTo}> {btnText} </Link>
             </button>
           </div>
-          <img width={imgSize} className="object-fill" src={img} />
+          <img
+            width={imgSize}
+            className="hidden md:block object-fill"
+            src={img}
+          />
         </div>
       </form>
     </div>
