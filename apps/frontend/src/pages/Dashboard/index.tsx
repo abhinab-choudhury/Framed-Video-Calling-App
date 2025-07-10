@@ -11,7 +11,9 @@ export default function Dashboard() {
 
   async function callAPIClicked() {
     try {
-      const response = await fetch(getApiDomain() + "/sessioninfo");
+      const response = await fetch(getApiDomain() + "/sessioninfo", {
+        credentials:"include"
+      });
       const data = await response.json();
       window.alert("Session Information:\n" + JSON.stringify(data, null, 2));
     } catch (err) {

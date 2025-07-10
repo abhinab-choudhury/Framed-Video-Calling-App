@@ -31,8 +31,8 @@ function App() {
                 )}
 
                 {/* This protects the "/dashboard" route so that it shows
-                                <Dashboard /> only if the user is logged in.
-                                Else it redirects the user to "/auth" */}
+                  <Dashboard /> only if the user is logged in.
+                  Else it redirects the user to "/auth" */}
                 <Route
                   path="/dashboard"
                   element={
