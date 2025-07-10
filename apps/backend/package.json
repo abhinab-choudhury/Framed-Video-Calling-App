@@ -8,7 +8,7 @@
     "start": "npx vite-node ./src/index.ts",
     "build": "rimraf dist && tsc",
     "ts.check": "tsc --project tsconfig.json",
-    "add-build": "git add dist",
+    "add-build": "git add -f dist",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{md,js,jsx,ts,tsx,css}\" --ignore-path .gitignore"
   },
@@ -26,18 +26,11 @@
     "@types/node": "^16.18.126",
     "eslint": "^9.16.0",
     "globals": "^15.13.0",
-    "pre-commit": "^1.0.10",
     "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
     "typescript-eslint": "^8.18.0",
     "vite-node": "^3.2.4"
   },
-  "pre-commit": [
-    "ts.check",
-    "build",
-    "add-build"
-  ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Abhinab Choudhury",
+  "license": "MIT"
 }
