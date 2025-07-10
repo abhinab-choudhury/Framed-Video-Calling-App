@@ -38,8 +38,8 @@ export const SuperTokensConfig: TypeInput = {
   },
   appInfo: {
     appName: "Framer",
-    apiDomain: ENV === "production" ? process.env.VERCEL_URL! : getApiDomain(),
-    websiteDomain: ENV === "production" ? process.env.VERCEL_URL! : getWebsiteDomain(),
+    apiDomain: ENV === "production" ? process.env.BACKEND_BASE_URL! : getApiDomain(),
+    websiteDomain: ENV === "production" ? process.env.FRONTEND_BASE_URL! : getWebsiteDomain(),
     apiBasePath: "/auth",
     websiteBasePath: "/auth",
   },
