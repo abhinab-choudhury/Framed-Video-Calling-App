@@ -29,6 +29,11 @@ app.use(middleware());
 
 // This endpoint can be accessed regardless of
 // having a session with SuperTokens
+
+app.get("/", async(_req, res) => {
+  res.send("<h1>Express Server</h1>")
+})
+
 app.get("/hello", async (_req, res) => {
   res.send("hello");
 });
