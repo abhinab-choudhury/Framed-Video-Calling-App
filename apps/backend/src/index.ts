@@ -15,6 +15,7 @@ supertokens.init(SuperTokensConfig);
 
 const app = express();
 
+app.use(express.json());
 app.use(
   cors({
     origin: ENV === "production" ? FRONTEND_BASE_URL : getWebsiteDomain(),
