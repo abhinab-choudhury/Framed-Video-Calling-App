@@ -14,7 +14,7 @@ import {
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
   WEBSITE_PORT,
-} from "lib/env.js";
+} from "./lib/env.js";
 
 export function getApiDomain() {
   const apiPort = API_PORT;
@@ -45,8 +45,6 @@ export const SuperTokensConfig: TypeInput = {
   recipeList: [
     ThirdParty.init({
       signInAndUpFeature: {
-        // We have provided you with development keys which you can use for testing.
-        // IMPORTANT: Please replace them with your own OAuth keys for production use.
         providers: [
           {
             config: {
@@ -55,7 +53,7 @@ export const SuperTokensConfig: TypeInput = {
                 {
                   clientId: GOOGLE_CLIENT_ID!,
                   clientSecret: GOOGLE_CLIENT_SECRET,
-                  scope: ["openid", "email", "profile"]
+                  scope: ["openid", "email", "profile"],
                 },
               ],
             },
@@ -67,11 +65,11 @@ export const SuperTokensConfig: TypeInput = {
                 {
                   clientId: GITHUB_CLIENT_ID!,
                   clientSecret: GITHUB_CLIENT_SECRET,
-                  scope: ["read:user", "user:email"]
+                  scope: ["read:user", "user:email"],
                 },
               ],
             },
-          }
+          },
         ],
       },
     }),

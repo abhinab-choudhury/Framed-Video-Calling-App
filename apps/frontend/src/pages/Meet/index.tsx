@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-function Meeting() {
+function Meet() {
   const { roomId }: Readonly<Params<string>> = useParams();
 
   const [micOn, setMicOn] = useState(true);
@@ -89,4 +89,4 @@ function Meeting() {
   );
 }
 
-export default Meeting;
+export default Meet;

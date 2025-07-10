@@ -9,7 +9,7 @@ import {
 } from "supertokens-node/framework/express";
 import { getWebsiteDomain, SuperTokensConfig } from "./config.js";
 import Multitenancy from "supertokens-node/recipe/multitenancy";
-import { API_PORT } from "lib/env.js";
+import { API_PORT } from "./lib/env.js";
 
 supertokens.init(SuperTokensConfig);
 

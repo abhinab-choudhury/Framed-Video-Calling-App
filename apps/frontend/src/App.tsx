@@ -3,11 +3,11 @@ import { getSuperTokensRoutesForReactRouterDom } from "supertokens-auth-react/ui
 import { SessionAuth } from "supertokens-auth-react/recipe/session";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as ReactRouter from "react-router-dom";
-import Dashboard from "./Dashboard";
+import Dashboard from "./pages/Dashboard";
 import { PreBuiltUIList, SuperTokensConfig, ComponentWrapper } from "./config";
-import Home from "./Home";
-import PageNotFound from "./404";
-import Meeting from "./Meeting";
+import Home from "./pages/Home";
+import PageNotFound from "./pages/404";
+import Meet from "./pages/Meet";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 
@@ -45,7 +45,7 @@ function App() {
                   path="/meet/:roomId"
                   element={
                     <SessionAuth>
-                      <Meeting />
+                      <Meet />
                     </SessionAuth>
                   }
                 />
