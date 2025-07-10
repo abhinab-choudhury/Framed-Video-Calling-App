@@ -35,8 +35,8 @@ export const styleOverride = `
 export const SuperTokensConfig = {
   appInfo: {
     appName: "Framer",
-    apiDomain: VITE_ENV === "production" ? window.location.origin : getApiDomain(),
-    websiteDomain: VITE_ENV === "production" ? window.location.origin : getWebsiteDomain(),
+    apiDomain: VITE_ENV === "production" ? BACKEND_BASE_URL! : getApiDomain(),
+    websiteDomain: VITE_ENV === "production" ? FRONTEND_BASE_URL! : getWebsiteDomain(),
     apiBasePath: "/auth",
     websiteBasePath: "/auth",
   },
