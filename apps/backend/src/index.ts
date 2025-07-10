@@ -9,7 +9,7 @@ import {
 } from "supertokens-node/framework/express";
 import { getWebsiteDomain, SuperTokensConfig } from "./config.js";
 import Multitenancy from "supertokens-node/recipe/multitenancy";
-import { API_PORT } from "./lib/env.js";
+import { API_PORT, ENV, FRONTEND_BASE_URL } from "./lib/env.js";
 
 supertokens.init(SuperTokensConfig);
 
@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: getWebsiteDomain(),
+    origin: ENV === "production" ? FRONTEND_BASE_URL : getWebsiteDomain(),
     allowedHeaders: ["content-type", ...supertokens.getAllCORSHeaders()],
     methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
