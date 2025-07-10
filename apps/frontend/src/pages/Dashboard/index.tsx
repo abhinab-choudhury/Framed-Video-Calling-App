@@ -1,6 +1,6 @@
 import {
   useSessionContext,
-  signOut,
+  signOut
 } from "supertokens-auth-react/recipe/session";
 import { getApiDomain } from "../../config";
 import { useNavigate } from "react-router-dom";
@@ -14,15 +14,18 @@ export default function Dashboard() {
       const response = await fetch(getApiDomain() + "/sessioninfo");
       const data = await response.json();
       window.alert("Session Information:\n" + JSON.stringify(data, null, 2));
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (err: any) {
-      window.alert("Error calling API: " + err.message);
+    } catch (err) {
+      window.alert("Error calling API: " + err);
     }
   }
 
   async function logoutClicked() {
     await signOut();
     navigate("/");
+  }
+
+  if (sessionContext.loading) {
+    return <div>Loading...</div>;
   }
 
   return (
