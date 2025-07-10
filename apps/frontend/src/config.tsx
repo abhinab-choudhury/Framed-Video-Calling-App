@@ -5,7 +5,7 @@ import Passwordless, {
 } from "supertokens-auth-react/recipe/passwordless";
 import { PasswordlessPreBuiltUI } from "supertokens-auth-react/recipe/passwordless/prebuiltui";
 import Session from "supertokens-auth-react/recipe/session";
-import { API_PORT, BACKEND_BASE_URL, FRONTEND_BASE_URL, WEBSITE_PORT } from "./lib/env";
+import { API_PORT, BACKEND_BASE_URL, FRONTEND_BASE_URL, VITE_ENV, WEBSITE_PORT } from "./lib/env";
 import ThirdParty, { Github, Google } from "supertokens-auth-react/recipe/thirdparty";
 import { ThirdPartyPreBuiltUI } from 'supertokens-auth-react/recipe/thirdparty/prebuiltui';
 
@@ -35,8 +35,8 @@ export const styleOverride = `
 export const SuperTokensConfig = {
   appInfo: {
     appName: "Framer",
-    apiDomain: getApiDomain(),
-    websiteDomain: getWebsiteDomain(),
+    apiDomain: VITE_ENV === "production" ? window.location.origin : getApiDomain(),
+    websiteDomain: VITE_ENV === "production" ? window.location.origin : getWebsiteDomain(),
     apiBasePath: "/auth",
     websiteBasePath: "/auth",
   },

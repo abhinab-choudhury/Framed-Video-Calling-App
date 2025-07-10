@@ -8,6 +8,7 @@ import type { TypeInput } from "supertokens-node/types";
 import {
   API_PORT,
   BACKEND_BASE_URL,
+  ENV,
   FRONTEND_BASE_URL,
   GITHUB_CLIENT_ID,
   GITHUB_CLIENT_SECRET,
@@ -37,8 +38,8 @@ export const SuperTokensConfig: TypeInput = {
   },
   appInfo: {
     appName: "Framer",
-    apiDomain: getApiDomain(),
-    websiteDomain: getWebsiteDomain(),
+    apiDomain: ENV === "production" ? process.env.VERCEL_URL! : getApiDomain(),
+    websiteDomain: ENV === "production" ? process.env.VERCEL_URL! : getWebsiteDomain(),
     apiBasePath: "/auth",
     websiteBasePath: "/auth",
   },

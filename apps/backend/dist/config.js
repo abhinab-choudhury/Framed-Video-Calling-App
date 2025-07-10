@@ -3,7 +3,7 @@ import Session from "supertokens-node/recipe/session";
 import Dashboard from "supertokens-node/recipe/dashboard";
 import UserRoles from "supertokens-node/recipe/userroles";
 import ThirdParty from "supertokens-node/recipe/thirdparty";
-import { API_PORT, BACKEND_BASE_URL, FRONTEND_BASE_URL, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, WEBSITE_PORT, } from "./lib/env.js";
+import { API_PORT, BACKEND_BASE_URL, ENV, FRONTEND_BASE_URL, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, WEBSITE_PORT, } from "./lib/env.js";
 export function getApiDomain() {
     const apiPort = API_PORT;
     const apiBaseUrl = BACKEND_BASE_URL;
@@ -23,8 +23,8 @@ export const SuperTokensConfig = {
     },
     appInfo: {
         appName: "Framer",
-        apiDomain: getApiDomain(),
-        websiteDomain: getWebsiteDomain(),
+        apiDomain: ENV === "production" ? process.env.VERCEL_URL : getApiDomain(),
+        websiteDomain: ENV === "production" ? process.env.VERCEL_URL : getWebsiteDomain(),
         apiBasePath: "/auth",
         websiteBasePath: "/auth",
     },

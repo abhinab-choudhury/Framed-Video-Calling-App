@@ -10,7 +10,8 @@
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add -f dist",
     "lint": "eslint .",
-    "format": "prettier --write \"**/*.{md,js,jsx,ts,tsx,css}\" --ignore-path .gitignore"
+    "format": "prettier --write \"**/*.{md,js,jsx,ts,tsx,css}\" --ignore-path .gitignore",
+    "prepare": "husky"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -26,6 +27,7 @@
     "@types/node": "^16.18.126",
     "eslint": "^9.16.0",
     "globals": "^15.13.0",
+    "husky": "^9.1.7",
     "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
     "typescript-eslint": "^8.18.0",
