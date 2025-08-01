@@ -7,9 +7,8 @@ import {
   errorHandler,
   SessionRequest,
 } from "supertokens-node/framework/express";
-import { SuperTokensConfig } from "./config.js";
-import Multitenancy from "supertokens-node/recipe/multitenancy";
-import { API_PORT } from "./lib/env.js";
+import { getWebsiteDomain, SuperTokensConfig } from "./lib/supertokens";
+import { PORT } from "./lib/env.js";
 
 supertokens.init(SuperTokensConfig);
 
@@ -18,28 +17,18 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
+    origin: getWebsiteDomain(),
     allowedHeaders: ["content-type", ...supertokens.getAllCORSHeaders()],
     methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
   }),
 );
-
-// This exposes all the APIs from SuperTokens to the client.
 app.use(middleware());
 
-// This endpoint can be accessed regardless of
-// having a session with SuperTokens
-
-app.get("/", async(_req, res) => {
-  res.send("<h1>Express Server</h1>")
-})
-
-app.get("/hello", async (_req, res) => {
-  res.send("hello");
+app.get("/", async (_req, res) => {
+  res.send("<h1>Express Server</h1>");
 });
 
-// An example API that requires session verification
 app.get("/sessioninfo", verifySession(), async (req: SessionRequest, res) => {
   const session = req.session;
   res.send({
@@ -49,17 +38,6 @@ app.get("/sessioninfo", verifySession(), async (req: SessionRequest, res) => {
   });
 });
 
-// This API is used by the frontend to create the tenants drop down when the app loads.
-// Depending on your UX, you can remove this API.
-app.get("/tenants", async (_req, res) => {
-  const tenants = await Multitenancy.listAllTenants();
-  res.send(tenants);
-});
-
-// In case of session related errors, this error handler
-// returns 401 to the client.
 app.use(errorHandler());
 
-app.listen(API_PORT, () =>
-  console.log(`API Server listening on port ${API_PORT}`),
-);
+app.listen(PORT, () => console.log(`API Server listening on port ${PORT}`));

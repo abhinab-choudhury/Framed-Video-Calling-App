@@ -1,9 +1,14 @@
-import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import VerticalLine from "../assets/images/vertical-line.png";
-import SigninBtn from "./signin-btn";
+import useAuth from "../hooks/useAuth";
+import SignInBtn from "./SignInButton";
+import SignOutBtn from "./SignOutButton";
+
+import { Link } from "react-router-dom";
 
 function Navbar() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <nav className="flex flex-col md:flex-row w-full py-2 px-9 bg-gray-100/40">
       <div className="flex  mx-auto w-full max-w-7xl items-center justify-between">
@@ -21,7 +26,7 @@ function Navbar() {
             </span>
           </div>
         </Link>
-        <SigninBtn />
+        {isAuthenticated == true ? <SignOutBtn /> : <SignInBtn />}
       </div>
     </nav>
   );

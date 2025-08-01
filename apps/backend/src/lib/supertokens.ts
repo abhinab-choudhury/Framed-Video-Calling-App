@@ -1,45 +1,40 @@
 import Passwordless from "supertokens-node/recipe/passwordless";
 import Session from "supertokens-node/recipe/session";
-import Dashboard from "supertokens-node/recipe/dashboard";
 import UserRoles from "supertokens-node/recipe/userroles";
 import ThirdParty from "supertokens-node/recipe/thirdparty";
 import type { TypeInput } from "supertokens-node/types";
 
 import {
-  API_PORT,
   BACKEND_BASE_URL,
-  ENV,
   FRONTEND_BASE_URL,
   GITHUB_CLIENT_ID,
   GITHUB_CLIENT_SECRET,
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
-  WEBSITE_PORT,
-} from "./lib/env.js";
+  SUPERTOKENS_API_KEY,
+  SUPERTOKENS_CONNECTION_URI,
+} from "./env.js";
 
 export function getApiDomain() {
-  const apiPort = API_PORT;
-  const apiBaseUrl = BACKEND_BASE_URL;
-  const apiUrl = `${apiBaseUrl}:${apiPort}`;
+  const apiUrl = BACKEND_BASE_URL!;
   return apiUrl;
 }
 
 export function getWebsiteDomain() {
-  const websitePort = WEBSITE_PORT;
-  const websiteBaseUrl = FRONTEND_BASE_URL;
-  const websiteUrl = `${websiteBaseUrl}:${websitePort}`;
+  const websiteUrl = FRONTEND_BASE_URL!;
   return websiteUrl;
 }
 
 export const SuperTokensConfig: TypeInput = {
   framework: "express",
   supertokens: {
-    connectionURI: "https://try.supertokens.com",
+    connectionURI: SUPERTOKENS_CONNECTION_URI!,
+    apiKey: SUPERTOKENS_API_KEY!,
   },
   appInfo: {
     appName: "Framer",
-    apiDomain: ENV === "production" ? BACKEND_BASE_URL! : getApiDomain(),
-    websiteDomain: ENV === "production" ? FRONTEND_BASE_URL! : getWebsiteDomain(),
+    apiDomain: getApiDomain(),
+    websiteDomain: getWebsiteDomain(),
     apiBasePath: "/auth",
     websiteBasePath: "/auth",
   },
@@ -53,7 +48,7 @@ export const SuperTokensConfig: TypeInput = {
               clients: [
                 {
                   clientId: GOOGLE_CLIENT_ID!,
-                  clientSecret: GOOGLE_CLIENT_SECRET,
+                  clientSecret: GOOGLE_CLIENT_SECRET!,
                   scope: ["openid", "email", "profile"],
                 },
               ],
@@ -65,7 +60,7 @@ export const SuperTokensConfig: TypeInput = {
               clients: [
                 {
                   clientId: GITHUB_CLIENT_ID!,
-                  clientSecret: GITHUB_CLIENT_SECRET,
+                  clientSecret: GITHUB_CLIENT_SECRET!,
                   scope: ["read:user", "user:email"],
                 },
               ],
@@ -78,7 +73,6 @@ export const SuperTokensConfig: TypeInput = {
       contactMethod: "EMAIL",
       flowType: "USER_INPUT_CODE_AND_MAGIC_LINK",
     }),
-    Dashboard.init(),
     UserRoles.init(),
     Session.init(),
   ],

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    /* Basic Options */
     "target": "ES2022",
     "outDir": "./dist",
     "rootDir": "./src",
@@ -12,14 +11,11 @@
     "types": ["node"],
     "noEmitOnError": true,
 
-    /* Source Map Options */
     "sourceMap": true,
 
-    /* Module Resolution Options */
     "moduleResolution": "node",
     "baseUrl": "./",
 
-    /* Additional Checks */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,

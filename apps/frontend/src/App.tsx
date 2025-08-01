@@ -3,15 +3,15 @@ import { getSuperTokensRoutesForReactRouterDom } from "supertokens-auth-react/ui
 import { SessionAuth } from "supertokens-auth-react/recipe/session";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as ReactRouter from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
-import { PreBuiltUIList, SuperTokensConfig, ComponentWrapper } from "./config";
 import Home from "./pages/Home";
-import PageNotFound from "./pages/404";
-import Meet from "./pages/Meet";
-import Footer from "./components/footer";
-import Navbar from "./components/navbar";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import PageNotFound from "./pages/PageNotFound";
+import { ComponentWrapper, PreBuiltUIList } from "./components/SuperTokensUI";
+import { SuperTokensConfig } from "./lib/supertokens";
+import JoinRoom from "./pages/JoinRoom";
+import Call from "./pages/Call";
 
-// Initialize SuperTokens - ideally in the global scope
 SuperTokens.init(SuperTokensConfig);
 
 function App() {
@@ -24,31 +24,19 @@ function App() {
             <ComponentWrapper>
               <Routes>
                 <Route path="/" element={<Home />} />
-                {/* This shows the login UI on "/auth" route */}
                 {getSuperTokensRoutesForReactRouterDom(
                   ReactRouter,
                   PreBuiltUIList,
                 )}
-
-                {/* This protects the "/dashboard" route so that it shows
-                  <Dashboard /> only if the user is logged in.
-                  Else it redirects the user to "/auth" */}
-                <Route
-                  path="/dashboard"
-                  element={
-                    <SessionAuth>
-                      <Dashboard />
-                    </SessionAuth>
-                  }
-                />
                 <Route
                   path="/meet/:roomId"
                   element={
                     <SessionAuth>
-                      <Meet />
+                      <JoinRoom />
                     </SessionAuth>
                   }
                 />
+                <Route path="/c/:roomId" element={<Call />} />
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
             </ComponentWrapper>

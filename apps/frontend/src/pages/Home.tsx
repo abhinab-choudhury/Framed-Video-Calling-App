@@ -1,4 +1,4 @@
-import HeroImage from "../../assets/images/heroImage.jpg";
+import HeroImage from "../assets/images/heroImage.jpg";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -8,8 +8,8 @@ import {
   ReactLogo,
   SuperTokenLogo,
   TailwindLogo,
-} from "../../assets/images";
-import JoinMeetingBtn from "../../components/join-meeting";
+} from "../assets/images";
+import JoinMeetingBtn from "../components/JoinMeeting";
 
 function HomePage() {
   const [roomId, setRoomId] = useState("");

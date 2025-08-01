@@ -1,7 +1,7 @@
 {
   "name": "framed_video_calling_app",
   "version": "0.0.1",
-  "description": "",
+  "description": "Video Calling Application",
   "main": "index.js",
   "private": true,
   "scripts": {

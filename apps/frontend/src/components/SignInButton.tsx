@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function SigninBtn() {
+export default function SignInBtn() {
   return (
     <Link
       to={"/auth"}

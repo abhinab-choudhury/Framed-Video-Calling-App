@@ -1,7 +1,7 @@
-import AgoraLogo from "./AgoraLogo.svg";
-import ReactLogo from "./ReactLogo.svg";
-import SuperTokenLogo from "./SuperTokenIcon.svg";
-import TailwindLogo from "./TailwindcssLogo.svg";
+import AgoraLogo from "./agora-logo.svg";
+import ReactLogo from "./react-logo.svg";
+import SuperTokenLogo from "./supertoken-logo.svg";
+import TailwindLogo from "./tailwindcss-logo.svg";
 import GithubLogo from "./github.svg";
 import GoogleLogo from "./google.svg";
 
