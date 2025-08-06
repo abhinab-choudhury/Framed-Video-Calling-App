@@ -11,13 +11,3 @@
 | Agora SDK    | Real-time video and audio communication  |
 
 ---
-
-## 🌐 Deployment
-
-You can deploy Framed using:
-
-- [Vercel](http://framed-video-calling-app.vercel.app/)
-
-## 📃 License
-
-[MIT](LICENSE)
